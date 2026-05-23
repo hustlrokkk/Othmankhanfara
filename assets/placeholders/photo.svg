@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1125" viewBox="0 0 900 1125" fill="none">
+  <rect width="900" height="1125" fill="#EAF1FB"/>
+  <rect x="1" y="1" width="898" height="1123" fill="none" stroke="#4B65FF" stroke-opacity="0.3" stroke-dasharray="10 10"/>
+  <circle cx="450" cy="470" r="150" fill="none" stroke="#51CBF3" stroke-width="14"/>
+  <g stroke="#4B65FF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M560 360 V580"/>
+    <path d="M560 470 L660 360"/>
+    <path d="M560 470 L668 580"/>
+  </g>
+  <text x="450" y="760" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" letter-spacing="4" fill="#3B4D6F">PHOTO HD</text>
+  <text x="450" y="804" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="2" fill="#9DACC9">assets/photo-othman.jpg</text>
+</svg>

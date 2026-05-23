@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" fill="#F2F6FD"/>
+  <rect x="1" y="1" width="1278" height="718" fill="none" stroke="#4B65FF" stroke-opacity="0.3" stroke-dasharray="12 12"/>
+  <g opacity="0.6" stroke="#9DACC9" stroke-width="2">
+    <path d="M120 560 L300 420 L480 470 L660 300 L840 360 L1020 200 L1160 240"/>
+  </g>
+  <g fill="#51CBF3">
+    <circle cx="300" cy="420" r="6"/>
+    <circle cx="660" cy="300" r="6"/>
+    <circle cx="1020" cy="200" r="6"/>
+  </g>
+  <text x="640" y="370" text-anchor="middle" font-family="Inter, sans-serif" font-size="34" letter-spacing="4" fill="#3B4D6F">CAPTURE À VENIR</text>
+  <text x="640" y="416" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="2" fill="#9DACC9">déposer dans /assets/yper/</text>
+</svg>
