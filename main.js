@@ -20,11 +20,29 @@
   }
 
   /* ---------- Marquee marques ---------- */
-  var marques = ['Yper', 'Leica Camera', 'Divinbydivin', 'Davrilsupply', 'Ford', 'Opel', 'Aston Martin', 'Domino’s Pizza', 'McDonald’s', 'Porsche'];
+  var marques = [
+    { name: 'Panzani', logo: 'assets/panzani-logo.png' },
+    { name: 'Aston Martin', logo: 'assets/astonmartin-logo.png' },
+    { name: 'Ford', logo: 'assets/ford-logo.svg' },
+    { name: 'Opel', logo: 'assets/opel-logo.png' },
+    { name: 'Land Rover', logo: 'assets/landrover-logo.png' },
+    { name: 'Maserati', logo: 'assets/maserati-logo.png' },
+    { name: 'Jaguar', logo: 'assets/jaguar-logo.png' },
+    { name: 'Epil Tech', logo: 'assets/epiltech-logo.png' },
+    { name: 'Auto Hall', logo: 'assets/autohall-logo.png' },
+    { name: 'Prestigia', logo: 'assets/prestigia-logo.png' },
+    { name: 'Domino’s Pizza', logo: 'assets/dominos-logo.svg' },
+    { name: 'McDonald’s', logo: 'assets/mcdonalds-logo.png' }
+  ];
   var marquee = document.getElementById('marquee');
   if (marquee) {
     var m = '';
-    marques.concat(marques).forEach(function (n) { m += '<span>' + n + '<span class="d">◆</span></span>'; });
+    marques.concat(marques).forEach(function (b) {
+      m += '<span class="marquee__item">' +
+             '<img class="marquee__logo" src="' + b.logo + '" alt="' + b.name + '" loading="lazy">' +
+             '<span class="marquee__name">' + b.name + '</span>' +
+           '</span>';
+    });
     marquee.innerHTML = m;
   }
 

@@ -303,10 +303,12 @@ img { display: block; max-width: 100%; }
 
 /* ===== Marquee marques ===== */
 .marquee-section { padding: 5rem 0; overflow: hidden; }
-.marquee { margin-top: 2rem; display: flex; gap: 2.5rem; width: max-content; animation: marquee 38s linear infinite; }
+.marquee { margin-top: 2rem; display: flex; gap: 4rem; width: max-content; align-items: flex-start; animation: marquee 38s linear infinite; }
 .marquee:hover { animation-play-state: paused; }
-.marquee span { font-family: var(--heading); font-weight: 700; font-size: clamp(1.4rem, 3vw, 2.2rem); color: var(--muted-2); display: inline-flex; align-items: center; gap: 2.5rem; }
-.marquee .d { color: var(--sky); }
+.marquee__item { display: inline-flex; flex-direction: column; align-items: center; gap: .75rem; flex: 0 0 auto; }
+.marquee__logo { height: 56px; width: auto; max-width: 160px; object-fit: contain; filter: grayscale(1); opacity: .65; transition: filter .3s ease, opacity .3s ease; }
+.marquee__item:hover .marquee__logo { filter: grayscale(0); opacity: 1; }
+.marquee__name { font-family: var(--heading); font-weight: 600; font-size: .85rem; letter-spacing: .02em; color: var(--muted-2); }
 
 /* ===== Méthode ===== */
 .steps { margin-top: 3.5rem; border-top: 1px solid var(--line-light); }
