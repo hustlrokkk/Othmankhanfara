@@ -1,0 +1,19 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="quedelaperf — performance">
+  <defs>
+    <linearGradient id="qdlp" x1="10" y1="34" x2="36" y2="11" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#51CBF3"/>
+      <stop offset="1" stop-color="#4B65FF"/>
+    </linearGradient>
+  </defs>
+  <!-- badge -->
+  <rect width="44" height="44" rx="12" fill="#001640"/>
+  <!-- speed lines (momentum) -->
+  <g stroke="#51CBF3" stroke-width="3" stroke-linecap="round" opacity="0.5">
+    <path d="M6 19 H12"/>
+    <path d="M5 25 H13"/>
+    <path d="M7 31 H12"/>
+  </g>
+  <!-- rising performance arrow -->
+  <path d="M11 33 L21 24 L28 28 L35 12" stroke="url(#qdlp)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 12 L35 12 L35 21" stroke="url(#qdlp)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
