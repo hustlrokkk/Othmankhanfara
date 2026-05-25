@@ -246,6 +246,8 @@ img { display: block; max-width: 100%; }
 .exp__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; align-items: baseline; margin-bottom: 0.8rem; }
 .exp__head h3 { font-size: 1.25rem; color: var(--navy); }
 .exp__company { margin-top: 0.2rem; font-weight: 600; color: var(--indigo); font-size: 0.92rem; }
+.exp__logos { display: flex; align-items: center; gap: 1rem; margin-top: 0.7rem; }
+.exp__logo { height: 34px; width: auto; max-width: 120px; object-fit: contain; }
 .exp__dates { font-family: var(--heading); font-size: 0.8rem; color: var(--muted-2); }
 .exp__context { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
 .exp__bullets { list-style: none; display: grid; gap: 0.55rem; }

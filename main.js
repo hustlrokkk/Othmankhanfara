@@ -32,7 +32,11 @@
     { name: 'Auto Hall', logo: 'assets/autohall-logo.png' },
     { name: 'Prestigia', logo: 'assets/prestigia-logo.png' },
     { name: 'Domino’s Pizza', logo: 'assets/dominos-logo.svg' },
-    { name: 'McDonald’s', logo: 'assets/mcdonalds-logo.png' }
+    { name: 'McDonald’s', logo: 'assets/mcdonalds-logo.png' },
+    { name: 'Divinbydivin', logo: 'assets/logo-divinbydivin.webp' },
+    { name: 'Davrilsupply', logo: 'assets/logo-davril.webp' },
+    { name: 'Leica', logo: 'assets/logo-leica.png' },
+    { name: 'Yper', logo: 'assets/logo-yper.png' }
   ];
   var marquee = document.getElementById('marquee');
   if (marquee) {
