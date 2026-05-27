@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+const title = "À propos de moi — Othman Khanfara | Expert Paid Media & Growth Marketing";
+const description = "Mon parcours : de l'agence au freelance, en passant par Leica Camera, Yper et Dudes. Expert Paid Media & Growth Marketing spécialisé Meta, Google, TikTok & Apple Ads.";
+---
+<BaseLayout title={title} description={description} page="inner" active="apropos">
+
+  <!-- HERO À PROPOS -->
+  <section class="ap-hero">
+    <div class="ap-hero__blobs" aria-hidden="true"><span></span><span></span></div>
+    <div class="shell ap-hero__inner">
+      <p class="eyebrow eyebrow--sky ap-hero__eyebrow reveal">OTHMAN KHANFARA — EXPERT PAID MEDIA &amp; GROWTH MARKETING</p>
+      <h1 class="ap-hero__title reveal">À propos<br><span class="ap-hero__accent">de moi</span></h1>
+      <p class="ap-hero__sub reveal">De l'agence au freelance : un parcours forgé par la data, la performance et le goût du résultat.</p>
+    </div>
+  </section>
+
+  <!-- MON PARCOURS -->
+  <section class="section" id="parcours">
+    <div class="shell">
+      <p class="eyebrow reveal">MON PARCOURS</p>
+      <h2 class="section-title reveal">Comment je suis arrivé là.</h2>
+
+      <div class="ap-story">
+
+        <div class="ap-story__block reveal">
+          <span class="ap-story__marker">01</span>
+          <div class="ap-story__content">
+            <h3>Les débuts en agence — apprendre à tout vitesse</h3>
+            <p>Tout a commencé chez <strong>WEBEUZ</strong>, une agence digitale à Casablanca. J'y gérais simultanément les campagnes de marques emblématiques — Ford, Opel, Aston Martin, Domino's, McDonald's — avec des objectifs variés, des budgets serrés et des exigences élevées. C'est là que j'ai développé mon exigence opérationnelle : livrer des résultats mesurables sur plusieurs comptes en parallèle, m'adapter rapidement, et apprendre à défendre chaque décision par la data.</p>
+          </div>
+        </div>
+
+        <div class="ap-story__block reveal">
+          <span class="ap-story__marker">02</span>
+          <div class="ap-story__content">
+            <h3>Côté marque premium — le pouvoir du branding</h3>
+            <p>Au siège social de <strong>LEICA CAMERA</strong>, installé dans le 8ème arrondissement parisien, j'ai découvert une autre facette du marketing : celle des marques premium. Leica est une maison d'exception parmi les plus grandes marques photo mondiales — un univers où chaque prise de parole est pensée pour nourrir et protéger un héritage construit sur des décennies. J'ai appris ici que le marketing premium est un marketing exigeant : pas question de sacrifier l'image au clic, ni le branding à la performance court terme. La force du branding Leica m'a enseigné qu'une marque forte est elle-même un levier d'acquisition — parfois plus puissant que le meilleur des ciblages.</p>
+          </div>
+        </div>
+
+        <div class="ap-story__block reveal">
+          <span class="ap-story__marker">03</span>
+          <div class="ap-story__content">
+            <h3>Le growth — tout reconstruire, tout mesurer</h3>
+            <p>C'est avec <strong>YPER</strong> que j'ai vraiment plongé dans le growth et la performance mobile. En arrivant, le constat était sans appel : tracking cassé entre mauvais ciblage et coûts élevés, répétition excessive qui saturait les audiences — les campagnes tournaient à vide. J'ai tout repris depuis la base et restructuré. Le CPI est passé de 2 € à 0,48 € en 5 mois. Les inscriptions ont grimpé de 5 100 à 7 200 par mois. Ce type de résultat, obtenu par la méthode et non par la chance, m'a confirmé que j'étais exactement là où je devais être.</p>
+          </div>
+        </div>
+
+        <div class="ap-story__block reveal">
+          <span class="ap-story__marker">04</span>
+          <div class="ap-story__content">
+            <h3>E-commerce international — piloter à grande échelle</h3>
+            <p>Chez <strong>DUDES</strong>, j'ai géré les campagnes Meta de deux marques de mode internationales avec un budget mensuel de 30 K€ et obtenu un ROAS x5. Multi-marchés, multi-formats, creative targeting pour affiner la précision et toucher les bonnes audiences, A/B tests créas &amp; audiences, montée en volume maîtrisée. C'est à ce moment que la question s'est posée naturellement : et si je prenais la pleine responsabilité de ce rôle ?</p>
+          </div>
+        </div>
+
+        <div class="ap-story__block ap-story__block--accent reveal">
+          <span class="ap-story__marker ap-story__marker--accent">↗</span>
+          <div class="ap-story__content">
+            <h3>Passer à mon compte — une étape, pas un saut dans le vide</h3>
+            <p>Me mettre à mon propre compte n'était pas un choix impulsif. Avant de franchir le pas à 100%, j'avais déjà réalisé des missions freelance pour des TPE dans des secteurs variés — des expériences qui m'ont conforté dans cette direction et encore plus motivé à me consacrer pleinement à mon compte. C'était une étape logique après plusieurs années d'expériences accumulées et de résultats prouvés. En freelance, j'accompagne des entreprises avec une posture différente : plus de réactivité, une expertise concentrée sur leurs objectifs, et une transparence totale sur les résultats. Je prends toute la responsabilité du rôle — et c'est exactement ce que je voulais.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIE EN DEHORS -->
+  <section class="section section--soft" id="hobbies">
+    <div class="shell">
+      <p class="eyebrow reveal">MA VIE EN DEHORS DU BUREAU</p>
+      <h2 class="section-title reveal">La moto, la montagne et l'imprévu.</h2>
+      <p class="lead reveal">Quand je ne suis pas derrière un dashboard, je suis sur la route ou en altitude. Deux façons différentes de décrocher — et paradoxalement, deux sources d'énergie pour mieux travailler.</p>
+
+      <div class="hobbies-grid">
+
+        <div class="hobby-card reveal">
+          <div class="hobby-card__img">
+            <img src={base + 'assets/hobbies-moto.jpg'} alt="Othman Khanfara — passion moto, road trip" loading="lazy" />
+          </div>
+          <div class="hobby-card__body">
+            <span class="hobby-card__tag">Moto &amp; Road trips</span>
+            <p>La moto, c'est ma façon de me reconnecter. La route, la vitesse maîtrisée, la concentration totale — un état d'esprit que je retrouve aussi dans mon travail : anticiper, ajuster, rester focus sur l'objectif.</p>
+          </div>
+        </div>
+
+        <div class="hobby-card reveal">
+          <div class="hobby-card__img">
+            <img src={base + 'assets/hobbies-randonnee.jpg'} alt="Othman Khanfara — randonnée, montagnes du Maroc" loading="lazy" />
+          </div>
+          <div class="hobby-card__body">
+            <span class="hobby-card__tag">Randonnée &amp; Découverte</span>
+            <p>Les montagnes marocaines, les trails, les panoramas inattendus — j'ai besoin de ces moments pour prendre du recul, respirer et garder les idées claires. La randonnée m'apprend aussi la patience et la persévérance : deux qualités que j'applique au quotidien.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section class="section" id="formation">
+    <div class="shell">
+      <p class="eyebrow reveal">FORMATION</p>
+      <h2 class="section-title reveal">Mon bagage académique.</h2>
+      <p class="lead reveal">Des programmes exigeants qui ont posé les bases théoriques de ma pratique terrain.</p>
+
+      <div class="edu edu--ap">
+
+        <div class="edu-card edu-card--ap reveal">
+          <img src={base + 'assets/logo-skema.png'} alt="SKEMA Business School" class="edu-card__logo" />
+          <div class="edu-card__meta">
+            <h3>MS Manager Marketing Data &amp; Commerce Électronique</h3>
+            <p class="edu-card__school">SKEMA Business School</p>
+          </div>
+          <p class="edu-card__desc">Mastère Spécialisé accrédité par la Conférence des Grandes Écoles. Ce programme de haut niveau forme des experts capables de piloter des stratégies e-commerce et d'exploiter la data marketing pour prendre des décisions à fort impact ROI. Au programme : analytics avancés, acquisition digitale, CRM, UX et management de projets e-commerce.</p>
+        </div>
+
+        <div class="edu-card edu-card--ap reveal">
+          <img src={base + 'assets/logo-isga.png'} alt="ISGA École de management et d'ingénierie" class="edu-card__logo" />
+          <div class="edu-card__meta">
+            <h3>Master Marketing &amp; Commerce</h3>
+            <p class="edu-card__school">ISGA École de management et d'ingénierie</p>
+          </div>
+          <p class="edu-card__desc">Master consolidant expertise stratégique et maîtrise opérationnelle du marketing. Analyse de marchés, gestion de projets, plans marketing, développement commercial et management d'équipe — autant de compétences qui viennent renforcer la pratique terrain au quotidien.</p>
+        </div>
+
+        <div class="edu-card edu-card--ap reveal">
+          <img src={base + 'assets/logo-isga.png'} alt="ISGA École de management et d'ingénierie" class="edu-card__logo" />
+          <div class="edu-card__meta">
+            <h3>Licence Management</h3>
+            <p class="edu-card__school">ISGA École de management et d'ingénierie</p>
+          </div>
+          <p class="edu-card__desc">Licence en Management délivrée par l'une des meilleures écoles du Maroc. Une formation solide posant les fondamentaux de la gestion d'entreprise, du marketing et de la stratégie commerciale — base essentielle pour comprendre les enjeux business derrière chaque campagne.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark">
+    <div class="shell ap-cta">
+      <div class="ap-cta__text">
+        <p class="eyebrow eyebrow--sky reveal">VOUS AVEZ UN PROJET ?</p>
+        <h2 class="ap-cta__title reveal">Travaillons ensemble.</h2>
+        <p class="lead lead--light reveal">Un compte à auditer, un projet à scaler, une app à faire décoller ? Je suis disponible.</p>
+      </div>
+      <div class="ap-cta__actions reveal">
+        <a href={base + '#contact'} class="btn btn--primary magnetic">Me contacter</a>
+        <a href="mailto:khanfara364@gmail.com" class="btn btn--ghost-light magnetic">khanfara364@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

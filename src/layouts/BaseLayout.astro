@@ -1,0 +1,116 @@
+---
+// BASE_URL n'a pas toujours de slash final selon trailingSlash → on normalise.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/'; // ex: "/Othmankhanfara/"
+const { title, description, page = 'inner', active = '' } = Astro.props;
+const home = page === 'home';
+
+// Ancres : sur l'accueil ce sont des liens internes (#x, interceptés par main.js) ;
+// sur les autres pages ce sont des liens vers l'accueil (/base/#x).
+const link = (hash) => (home ? hash : base + hash);
+const ds = home ? { 'data-scroll': '' } : {};
+const homeHref = home ? '#hero' : base;
+const apropos = base + 'a-propos/';
+const blog = base + 'blog/';
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="theme-color" content="#001640" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <link rel="icon" href={base + 'assets/logo-mark.svg'} type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href={base + 'styles.css'} />
+  <slot name="head" />
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__progress" id="progress"></div>
+    <div class="shell header__inner">
+      <a href={homeHref} class="header__logo" aria-label="Accueil — quedelaperf" {...ds}>
+        <img src={base + 'assets/logo-mark.svg'} alt="QDLP" />
+        <span class="logo-word"><span class="logo-word__a">Quedela</span><span class="logo-word__b">PERF</span></span>
+      </a>
+      <nav class="header__nav">
+        <a href={link('#profil')} {...ds}>Profil</a>
+        <a href={link('#chiffres')} {...ds}>Résultats</a>
+        <a href={link('#Expériences')} {...ds}>Expériences</a>
+        <a href={link('#yper')} {...ds}>Étude de cas</a>
+        <a href={apropos} class={active === 'apropos' ? 'nav-active' : undefined}>À propos</a>
+        <a href={blog} class={active === 'blog' ? 'nav-active' : undefined}>Le Blog</a>
+        <a href={link('#contact')} class="btn btn--primary magnetic" {...ds}>Contact</a>
+      </nav>
+      <div class="header__actions">
+        <a class="header__call" href="tel:+33753058050" aria-label="Appeler Othman au +33 7 53 05 80 50">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+        <button class="header__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="menu" id="menu">
+      <a href={homeHref} class="menu__home" aria-label="Retour à l'accueil" {...ds}>Accueil</a>
+      <a href={link('#profil')} {...ds}>Profil</a>
+      <a href={link('#chiffres')} {...ds}>Résultats</a>
+      <a href={link('#Expériences')} {...ds}>Expériences</a>
+      <a href={link('#yper')} {...ds}>Étude de cas</a>
+      <a href={apropos}>À propos</a>
+      <a href={blog}>Le Blog</a>
+      <a href={link('#contact')} {...ds}>Contact</a>
+      <a href={link('#rdv')} class="menu__rdv" {...ds}>Prendre RDV découverte</a>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <div class="footer__brand">
+        <img src={base + 'assets/logo-mark.svg'} alt="quedelaperf" />
+        <span>© <span id="year"></span> quedelaperf — Othman Khanfara · Expert Paid Media &amp; Growth Marketing</span>
+      </div>
+      <div class="footer__links">
+        <a href="mailto:khanfara364@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/othman-khanfara-/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href={blog}>Le Blog</a>
+        <a href={homeHref} {...ds}>{home ? 'Haut ↑' : 'Accueil ↑'}</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Barre d'action sticky mobile -->
+  <div class="mobile-bar">
+    <a href={link('#contact')} class="mobile-bar__primary" {...ds}>Me contacter</a>
+    <a href="https://www.linkedin.com/in/othman-khanfara-/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <img src="" alt="" id="lightboxImg" />
+    <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">✕</button>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.16/dist/lenis.min.js"></script>
+  <slot name="scripts" />
+  <script is:inline src={base + 'main.js'}></script>
+</body>
+</html>
