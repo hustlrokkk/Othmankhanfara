@@ -36,4 +36,4 @@ Sur l'app Yper Shopper, cette méthode a fait passer le coût par installation d
 
 ---
 
-*Un compte Meta à auditer ? [Réservons un appel découverte](/Othmankhanfara/#rdv) ou écrivez-moi : khanfara364@gmail.com.*
+*Un compte Meta à auditer ? [Réservons un appel découverte](/#rdv) ou écrivez-moi : khanfara364@gmail.com.*
