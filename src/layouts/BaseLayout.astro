@@ -31,6 +31,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href={base + 'styles.css'} />
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
   <slot name="head" />
 </head>
 <body>
@@ -72,7 +73,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       <a href={apropos}>À propos</a>
       <a href={blog}>Le Blog</a>
       <a href={link('#contact')} {...ds}>Contact</a>
-      <a href={link('#rdv')} class="menu__rdv" {...ds}>Prendre RDV découverte</a>
+      <a href="https://calendly.com/othmankhanfara/15min" target="_blank" rel="noopener" class="menu__rdv" data-calendly>Prendre RDV découverte</a>
     </div>
   </header>
 
@@ -112,5 +113,39 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.16/dist/lenis.min.js"></script>
   <slot name="scripts" />
   <script is:inline src={base + 'main.js'}></script>
+
+  <!-- Calendly : badge flottant + ouverture pop-up depuis le bouton du menu -->
+  <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script is:inline>
+    (function () {
+      var CAL_URL = 'https://calendly.com/othmankhanfara/15min';
+      window.addEventListener('load', function () {
+        if (window.Calendly && Calendly.initBadgeWidget) {
+          Calendly.initBadgeWidget({
+            url: CAL_URL,
+            text: 'Prendre RDV - 15 minutes',
+            color: '#07169e',
+            textColor: '#ffffff',
+            branding: true
+          });
+        }
+      });
+      // Le bouton "Prendre RDV découverte" du menu ouvre la pop-up Calendly
+      // (et ferme le menu si on est en mobile).
+      document.addEventListener('click', function (e) {
+        var t = e.target.closest('[data-calendly]');
+        if (!t) return;
+        e.preventDefault();
+        if (window.Calendly && Calendly.initPopupWidget) {
+          Calendly.initPopupWidget({ url: CAL_URL });
+        } else {
+          window.open(CAL_URL, '_blank', 'noopener');
+        }
+        var h = document.getElementById('header');
+        if (h) h.classList.remove('menu-open');
+        document.body.classList.remove('no-scroll');
+      });
+    })();
+  </script>
 </body>
 </html>

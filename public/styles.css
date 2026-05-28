@@ -413,6 +413,8 @@ img { display: block; max-width: 100%; }
 @media (max-width: 899px) { body { padding-bottom: 52px; } }
 /* Verrou de scroll quand le menu mobile est ouvert */
 body.no-scroll { overflow: hidden; }
+/* Masque le badge Calendly flottant quand le menu mobile est ouvert (sinon il flotte par-dessus). */
+body.no-scroll .calendly-badge-widget { display: none !important; }
 
 /* ===== Lightbox ===== */
 .lightbox { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 1.5rem; background: rgba(0,8,30,.92); backdrop-filter: blur(4px); }
