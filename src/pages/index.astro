@@ -7,6 +7,7 @@ const jsonLd = {"@context":"https://schema.org","@type":"Person","name":"Othman 
 ---
 <BaseLayout title={title} description={description} page="home">
   <Fragment slot="head">
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
   </Fragment>
 
@@ -70,6 +71,18 @@ const jsonLd = {"@context":"https://schema.org","@type":"Person","name":"Othman 
         <div class="kpi-card reveal"><span class="kpi" data-count-to="5"></span><p class="kpi-label">Leviers maîtrisés</p><p class="kpi-detail">Meta · Google · TikTok · Apple · SEO</p></div>
       </div>
       <a href="#yper" class="link-arrow reveal" data-scroll>Comment&nbsp;? Voir l'étude de cas YPER <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- RÉSERVATION / RDV -->
+  <section class="section section--soft" id="rdv">
+    <div class="shell booking">
+      <p class="eyebrow reveal">PRENDRE RENDEZ-VOUS</p>
+      <h2 class="section-title reveal">Réservons votre appel découverte.</h2>
+      <p class="lead reveal">15 minutes pour parler de vos objectifs d'acquisition, faire le point sur vos comptes et voir comment je peux faire grandir vos chiffres. Échange sans engagement — choisissez directement un créneau ci-dessous.</p>
+      <div class="booking__embed reveal">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/othmankhanfara/15min?hide_gdpr_banner=1&primary_color=0860d6" style="min-width:320px;height:700px;"></div>
+      </div>
     </div>
   </section>
 
@@ -324,4 +337,7 @@ const jsonLd = {"@context":"https://schema.org","@type":"Person","name":"Othman 
     </div>
   </section>
 
+  <Fragment slot="scripts">
+    <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </Fragment>
 </BaseLayout>

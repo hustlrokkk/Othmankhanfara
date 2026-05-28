@@ -207,7 +207,12 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 10px 30px rgba(0,11,109,.05);
 }
 .booking__embed .calendly-inline-widget { min-width: 320px; height: 700px; }
-@media (max-width: 600px) { .booking__embed .calendly-inline-widget { height: 1000px; } }
+/* Sur mobile, on garde l'iframe plus court que le viewport : il y a toujours du contenu
+   de page visible au-dessus/dessous, donc l'utilisateur peut continuer à scroller la page
+   en touchant en dehors de l'iframe (sinon Calendly capture le toucher et on est coincé). */
+@media (max-width: 600px) {
+  .booking__embed .calendly-inline-widget { height: 560px; }
+}
 
 /* ===== Hero ===== */
 .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; overflow: hidden;
@@ -413,8 +418,6 @@ img { display: block; max-width: 100%; }
 @media (max-width: 899px) { body { padding-bottom: 52px; } }
 /* Verrou de scroll quand le menu mobile est ouvert */
 body.no-scroll { overflow: hidden; }
-/* Masque le badge Calendly flottant quand le menu mobile est ouvert (sinon il flotte par-dessus). */
-body.no-scroll .calendly-badge-widget { display: none !important; }
 
 /* ===== Lightbox ===== */
 .lightbox { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 1.5rem; background: rgba(0,8,30,.92); backdrop-filter: blur(4px); }
