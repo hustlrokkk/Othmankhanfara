@@ -38,7 +38,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <div class="cursor-ring" aria-hidden="true"></div>
 
   <!-- HEADER -->
-  <header class="header" id="header">
+  <header class:list={["header", { "header--solid": active === 'blog' }]} id="header">
     <div class="header__progress" id="progress"></div>
     <div class="shell header__inner">
       <a href={homeHref} class="header__logo" aria-label="Accueil — quedelaperf" {...ds}>
